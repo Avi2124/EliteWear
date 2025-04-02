@@ -1,0 +1,39 @@
+**Log on to codeastro.com for more projects!***
+
+
+**Developed by Prajwal Rai**
+
+
+**Check the Website's Post Page for all the Installation Instructions**
+
+
+---Admin Login Details---
+
+//Email   : admin@mail.com
+//Password: codeastro.com
+
+Email   : avi@mail.com
+Password: 123456789
+
+
+--Customer Login Details---
+//Email   : customer@mail.com
+//Password: codeastro.customer
+
+Email   : customer@mail.com
+Password: 123456789
+
+//This command is used for link storage with public folder
+
+rm public/storage
+
+or
+
+rmdir /s /q public\storage
+
+php artisan storage:link
+
+
+**Check the Website's Post Page for all the Installation Instructions**
+
+
