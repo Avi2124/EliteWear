@@ -16,6 +16,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 
 Auth::routes(['register'=>false]);
 
+
 Route::get('user/login','FrontendController@login')->name('login.form');
 Route::post('user/login','FrontendController@loginSubmit')->name('login.submit');
 Route::get('user/logout','FrontendController@logout')->name('user.logout');
@@ -29,10 +30,11 @@ Route::get('/password/email', [ForgotPasswordController::class, 'sendResetLinkEm
 Route::get('login/{provider}/', 'Auth\LoginController@redirect')->name('login.redirect');
 Route::get('login/{provider}/callback/', 'Auth\LoginController@Callback')->name('login.callback');
 
-Route::get('/','FrontendController@home')->name('home');
+
 
 // Frontend Routes
-Route::get('/home', 'FrontendController@index');
+Route::get('/home', 'FrontendController@home')->name('home');
+Route::get('/','FrontendController@home')->name('home');
 Route::get('/about-us','FrontendController@aboutUs')->name('about-us');
 Route::get('/contact','FrontendController@contact')->name('contact');
 Route::post('/contact/message','MessageController@store')->name('contact.store');
@@ -144,14 +146,6 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     Route::get('change-password', 'AdminController@changePassword')->name('change.password.form');
     Route::post('change-password', 'AdminController@changPasswordStore')->name('change.password');
 });
-
-
-
-
-
-
-
-
 
 
 // User section start
